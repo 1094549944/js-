@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,69 +70,49 @@
 "use strict";
 
 
-var _util = __webpack_require__(1);
+function buy() {
+  console.log('开始买笔');
+  var p = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log('买了笔芯');
+      resolve('数学作业');
+    }, 1000);
+  });
+  return p;
+}
 
-var _util2 = _interopRequireDefault(_util);
+function work(data) {
+  console.log('开始写作业', data);
+  var p = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log('写完作业');
+      resolve('作业本');
+    }, 1000);
+  });
+  return p;
+}
+function out(data) {
+  console.log('开始上交', data);
+  var p = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log("上交完毕");
+      resolve("得分：A");
+    }, 1000);
+  });
+  return p;
+}
 
-var _util3 = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/*
- * @Author: jiaxinying 
- * @Date: 2018-07-02 14:14:00 
- * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-07-02 14:16:03
- */
-console.log(_util2.default);
-(0, _util3.fn1)();
-(0, _util3.fn2)();
+buy().then(work).then(out).then(function (data) {
+  console.log(data);
+});
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+__webpack_require__(0);
+module.exports = __webpack_require__(0);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-/*
- * @Author: jiaxinying 
- * @Date: 2018-07-02 14:13:10 
- * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-07-02 14:14:13
- */
-
-exports.default = {
-  a: 100
-};
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.fn1 = fn1;
-exports.fn2 = fn2;
-/*
- * @Author: jiaxinying 
- * @Date: 2018-07-02 14:13:56 
- * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-07-02 14:14:57
- */
-function fn1() {
-  console.log('fn1');
-}
-function fn2() {
-  console.log('fn2');
-}
 
 /***/ })
 /******/ ]);
