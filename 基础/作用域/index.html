@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <script>
+    function A() {
+      B = function () {
+        console.log(10)
+      }
+      return this
+    }
+    A.B = function () {
+      console.log(20)
+    }
+
+    A.prototype.B = function () {
+      console.log(30)
+    }
+
+    var B = function () {
+      console.log(40)
+    }
+    function B() {
+      console.log(50)
+
+    }
+
+
+
+    A.B()
+    B()
+
+    A().B()
+    B()
+    new A.B()
+    new A().B()
+
+    A.B() //20
+    B() //40
+
+    A().B()//10
+    B()//10
+    new A.B()//20
+    new A().B()//30
+
+
+
+    // var B = function () {
+    //   console.log(40)
+    // }
+    // function B() {
+    //   console.log(50)
+    //   return
+
+    // }
+
+    // console.log(B)
+    // console.log(B())
+
+  </script>
+</body>
+
+</html>
