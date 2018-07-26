@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-07-23 11:10:37 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-07-23 16:09:39
+ * @Last Modified time: 2018-07-26 10:35:06
  * 
  * 数据类型+预解释+内存分类
  */
@@ -137,3 +137,35 @@ undefined 'obj'
 { name: '王二', age: '12' } 'obj'
 
 */
+
+
+//练习
+var length = 10;
+function fn () {
+  console.log(this.length)
+}
+var obj = {
+  length: 5,
+  method: function (fn) {
+    fn()
+    arguments[0]()
+  }
+}
+obj.method(fn, 1)
+
+
+
+function fn (a) {
+  console.log(a)
+  var a = 2;
+  function a () { }
+  console.log(a)
+}
+fn(1)
+
+console.log(typeof fn)
+
+function fn () { }
+
+var fn;
+
