@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-07-23 11:10:37 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-07-26 10:35:06
+ * @Last Modified time: 2018-07-30 20:01:08
  * 
  * 数据类型+预解释+内存分类
  */
@@ -169,3 +169,14 @@ function fn () { }
 
 var fn;
 
+
+
+
+let reg1 = /AppleWebKit.*Mobile/i;
+let reg2 = /MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|bird|dbtel|Dopod|PHILIPS|HAIER|LENOVOMOT-|Nokia|SonyEricsson|SIE=|Amoi|ZTE/;
+if (reg1.test(navigator.userAgent) || reg2.test(navigator.userAgent)) {
+  //运行在移动端设备里面
+  console.log('运行在移动设备中')
+} else {
+  console.log('运行在pc中')
+}

@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-07-24 14:21:00 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-07-24 16:02:33
+ * @Last Modified time: 2018-07-27 10:28:42
  * 预解析
  */
 
@@ -128,3 +128,16 @@ function fn () {
   console.log(2)
 }
 fn()
+
+
+function foo () {
+  var a = 20
+  console.log(a)
+  function bar () {
+    a = 30;
+    console.log(a)
+  }
+  bar()
+  console.log(a)
+}
+foo()
