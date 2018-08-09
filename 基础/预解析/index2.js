@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-07-24 14:21:00 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-07-27 10:28:42
+ * @Last Modified time: 2018-08-09 19:47:08
  * 预解析
  */
 
@@ -141,3 +141,17 @@ function foo () {
   console.log(a)
 }
 foo()
+
+
+function fo () {
+  var i = 0;
+  return function (n) {
+    return n + i++;
+  }
+};
+
+var f = fo();
+var a = f(15); //value:____15______________
+var b = fo()(15); //value:____________15______
+var c = fo()(20); //value:____20______________
+var d = f(20); //value:_______21__________
